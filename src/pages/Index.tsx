@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { AppLink } from "@/components/AppLink";
 import { ScrollToRouteHash } from "@/components/ScrollToRouteHash";
 
 const SERVICE_BLOCKS = ["dashboards", "pipelines", "websites", "automation"] as const;
@@ -8,7 +7,7 @@ const SERVICE_BLOCKS = ["dashboards", "pipelines", "websites", "automation"] as 
 const Index = () => {
   const { lang } = useParams<{ lang: string }>();
   const { t } = useTranslation();
-  const base = `/${lang}`;
+  const base = `/${lang ?? "en"}`;
   const processSteps = t("process.steps", { returnObjects: true }) as string[];
 
   return (
@@ -77,12 +76,12 @@ const Index = () => {
             <article className="rounded-2xl border border-border bg-card p-5">
               <h3 className="mb-2 font-semibold">{t("servicesCards.apps.title")}</h3>
               <p className="text-sm text-muted-foreground">{t("servicesCards.apps.desc")}</p>
-              <AppLink
-                routerPath={`${base}/app-development`}
+              <Link
+                to={`${base}/app-development`}
                 className="mt-3 inline-block text-sm text-primary"
               >
                 {t("servicesCards.apps.link")}
-              </AppLink>
+              </Link>
             </article>
             <article className="rounded-2xl border border-border bg-card p-5">
               <h3 className="mb-2 font-semibold">{t("servicesCards.automation.title")}</h3>

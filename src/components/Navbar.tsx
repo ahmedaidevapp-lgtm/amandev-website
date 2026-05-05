@@ -1,9 +1,8 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LogoMark } from "@/components/LogoMark";
-import { AppLink } from "@/components/AppLink";
 
 function swapLangInPath(pathname: string, target: "en" | "fr") {
   const segments = pathname.split("/").filter(Boolean);
@@ -44,62 +43,56 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl"
     >
-      <AppLink
-        routerPath={base}
-        hash="main-content"
+      <Link
+        to={{ pathname: base, hash: "main-content" }}
         className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
       >
         {t("nav.skipToContent")}
-      </AppLink>
+      </Link>
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <AppLink
-          routerPath={base}
-          className="flex items-center gap-3"
-          aria-label={t("brand.homeAria")}
-        >
+        <Link to={base} className="flex items-center gap-3" aria-label={t("brand.homeAria")}>
           <LogoMark size="sm" aria-hidden />
           <span className="font-mono text-sm font-semibold uppercase tracking-widest text-primary">
             amandev <span className="text-foreground">technologies</span>
           </span>
-        </AppLink>
+        </Link>
 
         <div className="hidden items-center gap-6 md:flex md:gap-8">
           {homeSections.map((link) => (
-            <AppLink
+            <Link
               key={link.labelKey}
-              routerPath={base}
-              hash={link.hash}
+              to={{ pathname: base, hash: link.hash }}
               className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
             >
               {t(link.labelKey)}
-            </AppLink>
+            </Link>
           ))}
-          <AppLink
-            routerPath={`${base}/app-development`}
+          <Link
+            to={`${base}/app-development`}
             className={`text-sm transition-colors duration-300 ${
               appDevActive ? "text-primary" : "text-muted-foreground hover:text-primary"
             }`}
           >
             {t("nav.appDevelopment")}
-          </AppLink>
+          </Link>
           <div className="flex items-center gap-2 border-l border-border pl-6">
-            <AppLink
-              routerPath={swapLangInPath(location.pathname, "en")}
+            <Link
+              to={swapLangInPath(location.pathname, "en")}
               className={`text-xs font-semibold uppercase tracking-wider ${
                 activeLang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {t("nav.english")}
-            </AppLink>
+            </Link>
             <span className="text-muted-foreground/50">·</span>
-            <AppLink
-              routerPath={swapLangInPath(location.pathname, "fr")}
+            <Link
+              to={swapLangInPath(location.pathname, "fr")}
               className={`text-xs font-semibold uppercase tracking-wider ${
                 activeLang === "fr" ? "text-primary" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {t("nav.french")}
-            </AppLink>
+            </Link>
           </div>
           <a
             href="https://cal.com/ahmed-el-ghazouani-jii6po"
@@ -139,38 +132,37 @@ const Navbar = () => {
           className="space-y-4 border-t border-border bg-background px-6 py-4 md:hidden"
         >
           {homeSections.map((link) => (
-            <AppLink
+            <Link
               key={link.labelKey}
-              routerPath={base}
-              hash={link.hash}
-              onNavigate={() => setIsOpen(false)}
+              to={{ pathname: base, hash: link.hash }}
+              onClick={() => setIsOpen(false)}
               className="block text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               {t(link.labelKey)}
-            </AppLink>
+            </Link>
           ))}
-          <AppLink
-            routerPath={`${base}/app-development`}
-            onNavigate={() => setIsOpen(false)}
+          <Link
+            to={`${base}/app-development`}
+            onClick={() => setIsOpen(false)}
             className="block text-sm text-muted-foreground transition-colors hover:text-primary"
           >
             {t("nav.appDevelopment")}
-          </AppLink>
+          </Link>
           <div className="flex gap-4 pt-2">
-            <AppLink
-              routerPath={swapLangInPath(location.pathname, "en")}
-              onNavigate={() => setIsOpen(false)}
+            <Link
+              to={swapLangInPath(location.pathname, "en")}
+              onClick={() => setIsOpen(false)}
               className={`text-sm font-semibold ${activeLang === "en" ? "text-primary" : "text-muted-foreground"}`}
             >
               {t("nav.english")}
-            </AppLink>
-            <AppLink
-              routerPath={swapLangInPath(location.pathname, "fr")}
-              onNavigate={() => setIsOpen(false)}
+            </Link>
+            <Link
+              to={swapLangInPath(location.pathname, "fr")}
+              onClick={() => setIsOpen(false)}
               className={`text-sm font-semibold ${activeLang === "fr" ? "text-primary" : "text-muted-foreground"}`}
             >
               {t("nav.french")}
-            </AppLink>
+            </Link>
           </div>
           <a
             href="https://cal.com/ahmed-el-ghazouani-jii6po"

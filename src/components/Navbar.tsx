@@ -5,7 +5,14 @@ import { useTranslation } from "react-i18next";
 import { LogoMark } from "@/components/LogoMark";
 
 function swapLangInPath(pathname: string, target: "en" | "fr") {
-  return pathname.replace(/^\/(en|fr)(?=\/|$)/, `/${target}`);
+  const segments = pathname.split("/").filter(Boolean);
+  const i = segments.findIndex((s) => s === "en" || s === "fr");
+  if (i !== -1) {
+    const next = [...segments];
+    next[i] = target;
+    return `/${next.join("/")}`;
+  }
+  return `/${target}`;
 }
 
 const Navbar = () => {
@@ -18,10 +25,10 @@ const Navbar = () => {
 
   const homeLinks = useMemo(
     () => [
-      { labelKey: "nav.services", href: `${base}#services` },
-      { labelKey: "nav.approach", href: `${base}#approach` },
-      { labelKey: "nav.faq", href: `${base}#faq` },
-      { labelKey: "nav.contact", href: `${base}#contact` },
+      { labelKey: "nav.services", to: `${base}#services` },
+      { labelKey: "nav.approach", to: `${base}#approach` },
+      { labelKey: "nav.faq", to: `${base}#faq` },
+      { labelKey: "nav.contact", to: `${base}#contact` },
     ],
     [base],
   );
@@ -35,12 +42,12 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl"
     >
-      <a
-        href={`${base}#main-content`}
+      <Link
+        to={`${base}#main-content`}
         className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
       >
         {t("nav.skipToContent")}
-      </a>
+      </Link>
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link to={base} className="flex items-center gap-3" aria-label={t("brand.homeAria")}>
           <LogoMark size="sm" aria-hidden />
@@ -51,13 +58,13 @@ const Navbar = () => {
 
         <div className="hidden items-center gap-6 md:flex md:gap-8">
           {homeLinks.map((link) => (
-            <a
+            <Link
               key={link.labelKey}
-              href={link.href}
+              to={link.to}
               className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
             >
               {t(link.labelKey)}
-            </a>
+            </Link>
           ))}
           <Link
             to={`${base}/app-development`}
@@ -124,14 +131,14 @@ const Navbar = () => {
           className="space-y-4 border-t border-border bg-background px-6 py-4 md:hidden"
         >
           {homeLinks.map((link) => (
-            <a
+            <Link
               key={link.labelKey}
-              href={link.href}
+              to={link.to}
               onClick={() => setIsOpen(false)}
               className="block text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               {t(link.labelKey)}
-            </a>
+            </Link>
           ))}
           <Link
             to={`${base}/app-development`}

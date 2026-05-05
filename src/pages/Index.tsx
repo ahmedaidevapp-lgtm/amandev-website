@@ -1,6 +1,5 @@
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ChevronDown, ChevronRight } from "lucide-react";
 
 const SERVICE_BLOCKS = ["dashboards", "pipelines", "websites", "automation"] as const;
 
@@ -125,33 +124,22 @@ const Index = () => {
       <section id="approach" className="border-t border-border py-24 md:py-28">
         <div className="container mx-auto px-6">
           <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
-            <h2 className="mb-6 text-3xl font-bold md:mb-8 md:text-4xl">{t("process.title")}</h2>
-            <ul className="flex flex-col items-center gap-2 md:flex-row md:flex-wrap md:justify-center md:gap-x-1 md:gap-y-4">
+            <h2 className="mb-8 text-3xl font-bold tracking-tight md:mb-10 md:text-4xl">
+              {t("process.title")}
+            </h2>
+            <ol className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
               {processSteps.map((step, i) => (
                 <li
                   key={`${step}-${i}`}
-                  className="flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-x-2"
+                  className="relative flex flex-col rounded-xl border border-border/80 bg-background/35 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]"
                 >
-                  <span className="max-w-xs text-center text-sm leading-snug text-foreground/80 md:max-w-[11rem] md:text-left md:text-base">
-                    {step}
+                  <span className="mb-3 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/10 text-xs font-semibold tabular-nums text-primary">
+                    {i + 1}
                   </span>
-                  {i < processSteps.length - 1 && (
-                    <>
-                      <ChevronDown
-                        className="h-5 w-5 shrink-0 text-white md:hidden"
-                        aria-hidden
-                        strokeWidth={2}
-                      />
-                      <ChevronRight
-                        className="hidden h-5 w-5 shrink-0 text-white md:block"
-                        aria-hidden
-                        strokeWidth={2}
-                      />
-                    </>
-                  )}
+                  <p className="text-sm leading-relaxed text-foreground/90">{step}</p>
                 </li>
               ))}
-            </ul>
+            </ol>
           </article>
         </div>
       </section>

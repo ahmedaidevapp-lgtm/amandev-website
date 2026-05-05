@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type AppSitePreviewCardProps = {
   href: string;
@@ -13,6 +14,8 @@ export function AppSitePreviewCard({
   title,
   description,
 }: AppSitePreviewCardProps) {
+  const { t } = useTranslation();
+
   return (
     <a
       href={href}
@@ -34,7 +37,7 @@ export function AppSitePreviewCard({
       <div className="relative isolate h-[220px] w-full overflow-hidden bg-card md:h-[270px]">
         <iframe
           src={href}
-          title={`Live preview of ${title}`}
+          title={t("previewCard.livePreview", { title })}
           className="pointer-events-none absolute left-0 top-0 h-[920px] w-[1440px] origin-top-left scale-[0.22] border-0 select-none md:h-[980px] md:w-[1536px] md:scale-[0.265]"
           loading="lazy"
         />
@@ -58,7 +61,7 @@ export function AppSitePreviewCard({
           {description}
         </p>
         <span className="mt-auto pt-2 text-sm font-medium text-primary">
-          Visit site{" "}
+          {t("previewCard.visitSite")}{" "}
           <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
         </span>
       </div>

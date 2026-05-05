@@ -1,0 +1,147 @@
+{
+  "brand": {
+    "homeAria": "Amandev Technologies — Accueil"
+  },
+  "nav": {
+    "services": "Services",
+    "approach": "Approche",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "appDevelopment": "Applis",
+    "bookMeeting": "Réserver un rendez-vous",
+    "english": "EN",
+    "french": "FR",
+    "skipToContent": "Aller au contenu"
+  },
+  "footer": {
+    "copyright": "© 2026 Amandev Technologies"
+  },
+  "widget": {
+    "contactAria": "Contacter Amandev Technologies"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oups — page introuvable",
+    "homeLink": "Retour à l’accueil"
+  },
+  "hero": {
+    "eyebrow": "Freelance data et automatisation — tableaux de bord aux applis. Périmètre clair, passations documentées.",
+    "titleLine1": "Données, tableaux de bord et applis",
+    "titleGradient": "conçus pour la clarté et la durabilité",
+    "lead": "J’aide les organisations à passer de données brouillonnes et de travail manuel à des indicateurs clairs, des pipelines légers et des petites applis alignées sur leur façon de travailler. Les missions sont cadrées sur des résultats : livrables documentés, choix techniques raisonnables, et aucune pile opaque.",
+    "sublead": "Jalons fixes quand c’est pertinent, estimations transparentes, et livrables qui vous appartiennent (code, dépôts, documentation)."
+  },
+  "cta": {
+    "bookMeeting": "Réserver un rendez-vous",
+    "requestEstimate": "Demander un devis écrit",
+    "estimateSubject": "Demande de devis écrit"
+  },
+  "servicesOverview": {
+    "title": "Aperçu des services",
+    "intro": "Nous travaillons avec une culture data : moins de pièces mobiles, des hypothèses explicites, et des passations que votre équipe peut faire tourner. Nous pouvons couvrir la découverte jusqu’à la livraison, ou nous intégrer aux côtés de vos développeurs sur un périmètre défini."
+  },
+  "servicesCards": {
+    "analysis": {
+      "title": "Analyse & tableaux de bord",
+      "desc": "Indicateurs et visuels qui soutiennent de vraies décisions."
+    },
+    "engineering": {
+      "title": "Ingénierie data pragmatique",
+      "desc": "Pipelines et tables propres, sans complexité de plateforme inutile."
+    },
+    "websites": {
+      "title": "Sites web",
+      "desc": "Sites crédibles et rapides, avec bases SEO et analytics."
+    },
+    "apps": {
+      "title": "Applis",
+      "desc": "MVPs et outils internes, pensés avec la donnée.",
+      "link": "Voir la page dédiée aux applis"
+    },
+    "automation": {
+      "title": "Automatisation",
+      "desc": "Des alternatives fiables au travail répétitif sur les données et les opérations."
+    }
+  },
+  "common": {
+    "whatYouGet": "Ce que vous obtenez"
+  },
+  "serviceDetail": {
+    "dashboards": {
+      "title": "Analyse de données & tableaux de bord",
+      "intro": "Transformez feuilles éparses et exports en décisions : indicateurs propres, tableaux de bord interactifs et synthèses concises pour la direction.",
+      "bullets": [
+        "Questions claires et indicateurs de succès définis dès le départ",
+        "Jeux de données nettoyés et documentés, réutilisables",
+        "Tableaux de bord (Looker Studio, Power BI, Tableau ou stacks code) reliés à vos sources lorsque c’est possible",
+        "Une synthèse d’une page pour les parties prenantes sur la lecture du livrable"
+      ],
+      "footer": "Si vous pouvez décrire la décision à prendre, nous adaptons l’analyse et le tableau de bord autour de celle-ci."
+    },
+    "pipelines": {
+      "title": "Pipelines & ingénierie data (périmètre pragmatique)",
+      "intro": "Plomberie data fiable à échelle modeste : extractions planifiées, transformations et chargements pour que la reporting et les applis restent cohérents sans équipe plateforme complète.",
+      "bullets": [
+        "Pipelines simples et maintenables (jobs planifiés, fonctions cloud, orchestration légère)",
+        "Zones de staging et couches orientées métier avec conventions de nommage extensibles par votre équipe",
+        "Surveillance de base : alertes en cas d’échec, journaux d’exécution et notes de reprise",
+        "Documentation : carte sources → cibles, fréquence de rafraîchissement, checklist du responsable"
+      ],
+      "footer": "Partagez vos sources et où les chiffres doivent atterrir ; vous recevez une conception de pipeline concrète et une fourchette d’effort."
+    },
+    "websites": {
+      "title": "Sites web pour entreprises et professionnels",
+      "intro": "Sites rapides et clairs qui expliquent votre activité, captent des leads et restent faciles à mettre à jour — avec des stacks modernes et une structure sensée.",
+      "bullets": [
+        "Structure et accompagnement rédactionnel (ou intégration avec votre plume)",
+        "Mise en page responsive, bases d’accessibilité et performance",
+        "Formulaires de contact, hooks analytics et fondations SEO",
+        "Mise en production sur votre hébergement avec documentation de passation"
+      ],
+      "footer": "Envoyez des exemples de sites que vous aimez et les sections indispensables ; vous recevez une liste de pages figée et un calendrier."
+    },
+    "automation": {
+      "title": "Automatisation des données & processus",
+      "intro": "Remplacez copier-coller répétitifs, va-et-vient de fichiers et montage manuel de rapports par une automatisation fiable — journalisée, planifiée et tenue par votre équipe.",
+      "bullets": [
+        "Cartographie des étapes manuelles actuelles et des points de défaillance",
+        "Flux automatisés avec entrées et sorties claires",
+        "Notifications succès/échec et guides d’exploitation simples",
+        "Vue admin optionnelle ou panneau tableur pour les non-développeurs"
+      ],
+      "footer": "Parcourez une tâche hebdomadaire pénible ; vous recevez une ébauche d’automatisation et une estimation d’effort avant tout engagement de réalisation."
+    }
+  },
+  "process": {
+    "title": "Processus",
+    "steps": [
+      "Découverte",
+      "Accès aux données et contrôle qualité",
+      "Définition des indicateurs",
+      "Réalisation",
+      "Revue",
+      "Passation et cadence de mise à jour optionnelle"
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "priceQ": "Comment fixez-vous les prix ?",
+    "priceA": "Les tarifs dépendent du périmètre du projet et d’un éventuel besoin de prestations récurrentes chaque mois.",
+    "needQ": "De quoi avez-vous besoin de ma part ?",
+    "needA": "Un accès aux systèmes ou à des données représentatives, une personne décisionnaire, et des exemples de bons livrables lorsqu’ils existent.",
+    "remoteQ": "À distance ?",
+    "remoteA": "Oui, tout en restant flexibles pour un rendez-vous en présentiel lorsque la localisation le permet."
+  },
+  "contactSection": {
+    "title": "Prêt à cadrer votre projet ?"
+  },
+  "appsPage": {
+    "title": "Applications web & adaptées au mobile",
+    "wishlyDesc": "Ne ratez plus un anniversaire — Wishly simplifie les rappels personnels, avec une approche axée confidentialité et des applis sur les stores.",
+    "vitaflowDesc": "Transformez vos analyses de sang en insights clairs — suivez les biomarqueurs dans le temps, comparez les passages et gardez la maîtrise de vos données."
+  },
+  "previewCard": {
+    "visitSite": "Visiter le site",
+    "livePreview": "Aperçu en direct de {{title}}"
+  }
+}

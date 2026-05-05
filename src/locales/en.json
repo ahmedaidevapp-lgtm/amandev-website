@@ -1,0 +1,147 @@
+{
+  "brand": {
+    "homeAria": "Amandev Technologies — Home"
+  },
+  "nav": {
+    "services": "Services",
+    "approach": "Approach",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "appDevelopment": "App Development",
+    "bookMeeting": "Book a meeting",
+    "english": "EN",
+    "french": "FR",
+    "skipToContent": "Skip to content"
+  },
+  "footer": {
+    "copyright": "© 2026 Amandev Technologies"
+  },
+  "widget": {
+    "contactAria": "Contact Amandev Technologies"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "homeLink": "Return to Home"
+  },
+  "hero": {
+    "eyebrow": "Freelance data & automation—dashboards to apps. Clear scope, documented handoffs.",
+    "titleLine1": "Data, dashboards, and apps",
+    "titleGradient": "built for clarity and maintenance",
+    "lead": "I help organizations move from messy data and manual work to clear metrics, light-weight pipelines, and small apps that fit how you already operate. Engagements are scoped for outcomes: documented deliverables, sensible defaults, and no mystery stack.",
+    "sublead": "Fixed milestones where it helps, transparent estimates, and deliverables you own (code, repos, docs)."
+  },
+  "cta": {
+    "bookMeeting": "Book a meeting",
+    "requestEstimate": "Request a written estimate",
+    "estimateSubject": "Written estimate request"
+  },
+  "servicesOverview": {
+    "title": "Services overview",
+    "intro": "We work with a data-first mindset: fewer moving parts, explicit assumptions, and handoffs your team can run. We can own discovery through delivery or embed alongside your developers for a defined slice."
+  },
+  "servicesCards": {
+    "analysis": {
+      "title": "Analysis & dashboards",
+      "desc": "Metrics and visuals that support real decisions."
+    },
+    "engineering": {
+      "title": "Practical data engineering",
+      "desc": "Pipelines and clean tables without platform overload."
+    },
+    "websites": {
+      "title": "Websites",
+      "desc": "Credible, fast sites with SEO and analytics basics."
+    },
+    "apps": {
+      "title": "Apps",
+      "desc": "MVPs and internal tools with data in mind.",
+      "link": "Open dedicated app page"
+    },
+    "automation": {
+      "title": "Automation",
+      "desc": "Reliable replacements for repetitive data and ops work."
+    }
+  },
+  "common": {
+    "whatYouGet": "What you get"
+  },
+  "serviceDetail": {
+    "dashboards": {
+      "title": "Data analysis & dashboards",
+      "intro": "Turn scattered spreadsheets and exports into decisions: clean metrics, interactive dashboards, and short narratives leadership can act on.",
+      "bullets": [
+        "Clear questions and success metrics agreed up front",
+        "Cleaned, documented datasets suitable for reuse",
+        "Dashboards (Looker Studio, Power BI, Tableau, or code-based stacks) wired to your sources where possible",
+        "A one-page summary for stakeholders on how to read it"
+      ],
+      "footer": "If you can describe the decision you need to make, we can shape the analysis and dashboard around it."
+    },
+    "pipelines": {
+      "title": "Data pipelines & engineering (practical scope)",
+      "intro": "Reliable, smaller-scale data plumbing: scheduled extracts, transforms, and loads so reporting and apps stay consistent without a full platform team.",
+      "bullets": [
+        "Simple, maintainable pipelines (scheduled jobs, cloud functions, lightweight orchestration)",
+        "Staging and curated layers with naming conventions your team can extend",
+        "Basic monitoring with failure alerts, run logs, and recovery notes",
+        "Documentation: source-to-target map, refresh frequency, owner checklist"
+      ],
+      "footer": "Share your sources and where numbers need to land; you will get a concrete pipeline design and effort range."
+    },
+    "websites": {
+      "title": "Websites for businesses and professionals",
+      "intro": "Fast, clear sites that explain what you do, capture leads, and stay easy to update—built with modern stacks and sensible structure.",
+      "bullets": [
+        "Structure and copy guidance (or integration with your writer)",
+        "Responsive layout, accessibility basics, and performance-minded setup",
+        "Contact forms, analytics hooks, and SEO foundations",
+        "Deployment to your hosting with handoff docs"
+      ],
+      "footer": "Send examples of sites you like and your must-have sections; you will get a fixed page list and timeline."
+    },
+    "automation": {
+      "title": "Data & process automation",
+      "intro": "Replace repetitive copy-paste, file shuffling, and report assembly with dependable automation—logged, scheduled, and owned by your team.",
+      "bullets": [
+        "Map of current manual steps and failure points",
+        "Automated flows with clear inputs and outputs",
+        "Notifications on success/failure and simple runbooks",
+        "Optional admin view or spreadsheet control panel for non-developers"
+      ],
+      "footer": "Walk through one painful weekly task; you will get an automation sketch and effort estimate before any build commitment."
+    }
+  },
+  "process": {
+    "title": "Process",
+    "steps": [
+      "Discovery",
+      "Data access & quality check",
+      "Metric definitions",
+      "Build",
+      "Review",
+      "Handoff & optional refresh cadence"
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "priceQ": "How do you price?",
+    "priceA": "Pricing will depend on the scope of the project, and whether there is a need for recurring monthly services.",
+    "needQ": "What do you need from me?",
+    "needA": "Access to systems or sample data, a stakeholder for decisions, and examples of good outputs where they exist.",
+    "remoteQ": "Remote?",
+    "remoteA": "Yes, but also flexible to meet in person if the location allows for it."
+  },
+  "contactSection": {
+    "title": "Ready to scope your project?"
+  },
+  "appsPage": {
+    "title": "Web & mobile-friendly applications",
+    "wishlyDesc": "Never miss a birthday—Wishly keeps personal reminders simple, with privacy-first positioning and apps on the stores.",
+    "vitaflowDesc": "Turn lab reports into plain-language insights—track biomarkers over time, compare visits, and stay in control of your data."
+  },
+  "previewCard": {
+    "visitSite": "Visit site",
+    "livePreview": "Live preview of {{title}}"
+  }
+}

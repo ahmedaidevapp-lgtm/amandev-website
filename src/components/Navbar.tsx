@@ -1,18 +1,32 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { LogoMark } from "@/components/LogoMark";
 
-const homeLinks = [
-  { label: "Services", href: "/#services" },
-  { label: "Approach", href: "/#approach" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/#contact" },
-];
+function swapLangInPath(pathname: string, target: "en" | "fr") {
+  return pathname.replace(/^\/(en|fr)(?=\/|$)/, `/${target}`);
+}
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { lang } = useParams<{ lang: string }>();
+  const { t } = useTranslation();
+  const base = `/${lang ?? "en"}`;
+  const activeLang = lang === "fr" ? "fr" : "en";
+
+  const homeLinks = useMemo(
+    () => [
+      { labelKey: "nav.services", href: `${base}#services` },
+      { labelKey: "nav.approach", href: `${base}#approach` },
+      { labelKey: "nav.faq", href: `${base}#faq` },
+      { labelKey: "nav.contact", href: `${base}#contact` },
+    ],
+    [base],
+  );
+
+  const appDevActive = location.pathname.includes("/app-development");
 
   return (
     <motion.nav
@@ -21,56 +35,84 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl"
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <Link
-          to="/"
-          className="flex items-center gap-3"
-          aria-label="Amandev Technologies — Home"
-        >
+      <a
+        href={`${base}#main-content`}
+        className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+      >
+        {t("nav.skipToContent")}
+      </a>
+      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+        <Link to={base} className="flex items-center gap-3" aria-label={t("brand.homeAria")}>
           <LogoMark size="sm" aria-hidden />
-          <span className="font-mono text-sm font-semibold tracking-widest text-primary uppercase">
+          <span className="font-mono text-sm font-semibold uppercase tracking-widest text-primary">
             amandev <span className="text-foreground">technologies</span>
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden items-center gap-6 md:flex md:gap-8">
           {homeLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.labelKey}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
             >
-              {link.label}
+              {t(link.labelKey)}
             </a>
           ))}
           <Link
-            to="/app-development"
+            to={`${base}/app-development`}
             className={`text-sm transition-colors duration-300 ${
-              location.pathname === "/app-development"
-                ? "text-primary"
-                : "text-muted-foreground hover:text-primary"
+              appDevActive ? "text-primary" : "text-muted-foreground hover:text-primary"
             }`}
           >
-            App Development
+            {t("nav.appDevelopment")}
           </Link>
+          <div className="flex items-center gap-2 border-l border-border pl-6">
+            <Link
+              to={swapLangInPath(location.pathname, "en")}
+              className={`text-xs font-semibold uppercase tracking-wider ${
+                activeLang === "en" ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {t("nav.english")}
+            </Link>
+            <span className="text-muted-foreground/50">·</span>
+            <Link
+              to={swapLangInPath(location.pathname, "fr")}
+              className={`text-xs font-semibold uppercase tracking-wider ${
+                activeLang === "fr" ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {t("nav.french")}
+            </Link>
+          </div>
           <a
             href="https://cal.com/ahmed-el-ghazouani-jii6po"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-opacity"
+            className="rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Book a meeting
+            {t("nav.bookMeeting")}
           </a>
         </div>
 
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground"
+          className="text-foreground md:hidden"
+          aria-expanded={isOpen}
+          aria-label="Menu"
         >
           <div className="space-y-1.5">
-            <span className={`block w-6 h-0.5 bg-foreground transition-transform ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-6 h-0.5 bg-foreground transition-opacity ${isOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-0.5 bg-foreground transition-transform ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span
+              className={`block h-0.5 w-6 bg-foreground transition-transform ${isOpen ? "translate-y-2 rotate-45" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-foreground transition-opacity ${isOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-foreground transition-transform ${isOpen ? "-translate-y-2 -rotate-45" : ""}`}
+            />
           </div>
         </button>
       </div>
@@ -79,25 +121,49 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden border-t border-border bg-background px-6 py-4 space-y-4"
+          className="space-y-4 border-t border-border bg-background px-6 py-4 md:hidden"
         >
           {homeLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.labelKey}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="block text-sm text-muted-foreground transition-colors hover:text-primary"
             >
-              {link.label}
+              {t(link.labelKey)}
             </a>
           ))}
           <Link
-            to="/app-development"
+            to={`${base}/app-development`}
             onClick={() => setIsOpen(false)}
-            className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="block text-sm text-muted-foreground transition-colors hover:text-primary"
           >
-            App Development
+            {t("nav.appDevelopment")}
           </Link>
+          <div className="flex gap-4 pt-2">
+            <Link
+              to={swapLangInPath(location.pathname, "en")}
+              onClick={() => setIsOpen(false)}
+              className={`text-sm font-semibold ${activeLang === "en" ? "text-primary" : "text-muted-foreground"}`}
+            >
+              {t("nav.english")}
+            </Link>
+            <Link
+              to={swapLangInPath(location.pathname, "fr")}
+              onClick={() => setIsOpen(false)}
+              className={`text-sm font-semibold ${activeLang === "fr" ? "text-primary" : "text-muted-foreground"}`}
+            >
+              {t("nav.french")}
+            </Link>
+          </div>
+          <a
+            href="https://cal.com/ahmed-el-ghazouani-jii6po"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground"
+          >
+            {t("nav.bookMeeting")}
+          </a>
         </motion.div>
       )}
     </motion.nav>

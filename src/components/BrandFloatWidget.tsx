@@ -1,11 +1,17 @@
+import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { LogoMark } from "@/components/LogoMark";
 
 const BrandFloatWidget = () => {
+  const { lang } = useParams<{ lang: string }>();
+  const { t } = useTranslation();
+  const base = `/${lang ?? "en"}`;
+
   return (
     <a
-      href="/#contact"
+      href={`${base}#contact`}
       className="group fixed bottom-6 right-6 z-40 transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      aria-label="Contact Amandev Technologies"
+      aria-label={t("widget.contactAria")}
     >
       <LogoMark
         size="lg"

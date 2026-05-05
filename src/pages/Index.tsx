@@ -1,5 +1,7 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { AppLink } from "@/components/AppLink";
+import { ScrollToRouteHash } from "@/components/ScrollToRouteHash";
 
 const SERVICE_BLOCKS = ["dashboards", "pipelines", "websites", "automation"] as const;
 
@@ -11,6 +13,7 @@ const Index = () => {
 
   return (
     <main id="main-content" className="min-h-screen bg-background">
+      <ScrollToRouteHash />
       <section className="relative flex min-h-screen items-center overflow-hidden grid-pattern">
         <div className="absolute top-1/4 -left-32 h-96 w-96 animate-pulse-glow rounded-full bg-primary/5 blur-3xl" />
         <div
@@ -74,12 +77,12 @@ const Index = () => {
             <article className="rounded-2xl border border-border bg-card p-5">
               <h3 className="mb-2 font-semibold">{t("servicesCards.apps.title")}</h3>
               <p className="text-sm text-muted-foreground">{t("servicesCards.apps.desc")}</p>
-              <Link
-                to={`${base}/app-development`}
+              <AppLink
+                routerPath={`${base}/app-development`}
                 className="mt-3 inline-block text-sm text-primary"
               >
                 {t("servicesCards.apps.link")}
-              </Link>
+              </AppLink>
             </article>
             <article className="rounded-2xl border border-border bg-card p-5">
               <h3 className="mb-2 font-semibold">{t("servicesCards.automation.title")}</h3>

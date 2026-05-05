@@ -1,12 +1,15 @@
 import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "@/i18n/config";
+import { AppLink } from "@/components/AppLink";
 
 const NotFound = () => {
   const location = useLocation();
   const { t } = useTranslation();
-  const lang = location.pathname.startsWith("/fr") ? "fr" : "en";
+  const segments = location.pathname.split("/").filter(Boolean);
+  const langSegment = segments.find((s) => s === "en" || s === "fr");
+  const lang = langSegment === "fr" ? "fr" : "en";
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
@@ -22,9 +25,9 @@ const NotFound = () => {
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">{t("notFound.title")}</h1>
         <p className="mb-4 text-xl text-muted-foreground">{t("notFound.message")}</p>
-        <Link to={`/${lang}`} className="text-primary underline hover:text-primary/90">
+        <AppLink routerPath={`/${lang}`} className="text-primary underline hover:text-primary/90">
           {t("notFound.homeLink")}
-        </Link>
+        </AppLink>
       </div>
     </div>
   );

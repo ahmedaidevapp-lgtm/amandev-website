@@ -1,6 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { ChevronDown, ChevronRight } from "lucide-react";
+
+const PROCESS_STEPS = [
+  "Discovery",
+  "Data access & quality check",
+  "Metric definitions",
+  "Build",
+  "Review",
+  "Handoff & optional refresh cadence",
+] as const;
 
 const Index = () => {
   return (
@@ -36,13 +46,15 @@ const Index = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="#"
+                  href="https://cal.com/ahmed-el-ghazouani-jii6po"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3.5 bg-primary text-primary-foreground font-medium rounded-full hover:opacity-90 transition-opacity text-sm"
                 >
-                  Book a 20-minute discovery call
+                  Book a meeting
                 </a>
                 <a
-                  href="#"
+                  href="mailto:ahmed.aidev.app@gmail.com?subject=Written%20estimate%20request"
                   className="px-8 py-3.5 border border-border text-foreground font-medium rounded-full hover:border-primary/50 transition-colors text-sm"
                 >
                   Request a written estimate
@@ -192,58 +204,84 @@ const Index = () => {
 
         <section id="approach" className="py-24 md:py-28 border-t border-border">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-5">Process</h2>
-            <p className="text-muted-foreground max-w-4xl">
-              Discovery - data access & quality check - metric definitions - build - review -
-              handoff & optional refresh cadence.
-            </p>
+            <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">Process</h2>
+              <ul className="flex flex-col items-center gap-2 md:flex-row md:flex-wrap md:justify-center md:gap-x-1 md:gap-y-4">
+                {PROCESS_STEPS.map((step, i) => (
+                  <li
+                    key={step}
+                    className="flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-x-2"
+                  >
+                    <span className="max-w-xs text-center text-sm leading-snug text-foreground/80 md:max-w-[11rem] md:text-left md:text-base">
+                      {step}
+                    </span>
+                    {i < PROCESS_STEPS.length - 1 && (
+                      <>
+                        <ChevronDown
+                          className="h-5 w-5 shrink-0 text-white md:hidden"
+                          aria-hidden
+                          strokeWidth={2}
+                        />
+                        <ChevronRight
+                          className="hidden h-5 w-5 shrink-0 text-white md:block"
+                          aria-hidden
+                          strokeWidth={2}
+                        />
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </section>
 
         <section id="faq" className="py-24 md:py-28 border-t border-border">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10">FAQ</h2>
-            <div className="space-y-6 max-w-4xl">
-              <article>
-                <h3 className="font-semibold mb-2">How do you price?</h3>
-                <p className="text-muted-foreground">
-                  Mix of fixed packages for well-defined work and time-and-materials with caps for
-                  exploration-heavy phases-always written before kickoff.
-                </p>
-              </article>
-              <article>
-                <h3 className="font-semibold mb-2">What do you need from me?</h3>
-                <p className="text-muted-foreground">
-                  Access to systems or sample data, a stakeholder for decisions, and examples of
-                  good outputs where they exist.
-                </p>
-              </article>
-              <article>
-                <h3 className="font-semibold mb-2">Remote?</h3>
-                <p className="text-muted-foreground">Yes-[your timezone] with overlap windows you prefer.</p>
-              </article>
-            </div>
+            <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">FAQ</h2>
+              <div className="space-y-6 max-w-4xl">
+                <article>
+                  <h3 className="mb-2 font-semibold text-foreground">How do you price?</h3>
+                  <p className="leading-relaxed text-foreground/80">
+                    Pricing will depend on the scope of the project, and whether there is a need for
+                    recurring monthly services.
+                  </p>
+                </article>
+                <article>
+                  <h3 className="mb-2 font-semibold text-foreground">What do you need from me?</h3>
+                  <p className="leading-relaxed text-foreground/80">
+                    Access to systems or sample data, a stakeholder for decisions, and examples of
+                    good outputs where they exist.
+                  </p>
+                </article>
+                <article>
+                  <h3 className="mb-2 font-semibold text-foreground">Remote?</h3>
+                  <p className="leading-relaxed text-foreground/80">
+                    Yes, but also flexible to meet in person if the location allows for it.
+                  </p>
+                </article>
+              </div>
+            </article>
           </div>
         </section>
 
         <section id="contact" className="py-24 md:py-28 border-t border-border">
           <div className="container mx-auto px-6 max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
               Ready to scope your project?
             </h2>
-            <p className="text-muted-foreground mb-8">
-              You can paste each service block into dedicated pages and add stack badges (Python,
-              SQL, dbt, BigQuery, React, Flutter) under "Tools I use" for each one.
-            </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="#"
+                href="https://cal.com/ahmed-el-ghazouani-jii6po"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-primary text-primary-foreground font-medium rounded-full hover:opacity-90 transition-opacity text-sm"
               >
-                Book a 20-minute discovery call
+                Book a meeting
               </a>
               <a
-                href="#"
+                href="mailto:ahmed.aidev.app@gmail.com?subject=Written%20estimate%20request"
                 className="px-8 py-3.5 border border-border text-foreground font-medium rounded-full hover:border-primary/50 transition-colors text-sm"
               >
                 Request a written estimate

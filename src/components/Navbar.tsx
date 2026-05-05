@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { LogoMark } from "@/components/LogoMark";
 
 const homeLinks = [
   { label: "Services", href: "/#services" },
@@ -23,9 +24,13 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <Link
           to="/"
-          className="font-mono text-sm font-semibold tracking-widest text-primary uppercase"
+          className="flex items-center gap-3"
+          aria-label="Amandev Technologies — Home"
         >
-          amandev <span className="text-foreground">technologies</span>
+          <LogoMark size="sm" aria-hidden />
+          <span className="font-mono text-sm font-semibold tracking-widest text-primary uppercase">
+            amandev <span className="text-foreground">technologies</span>
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -49,10 +54,12 @@ const Navbar = () => {
             App Development
           </Link>
           <a
-            href={location.pathname === "/app-development" ? "/#contact" : "#contact"}
+            href="https://cal.com/ahmed-el-ghazouani-jii6po"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-opacity"
           >
-            Book Discovery Call
+            Book a meeting
           </a>
         </div>
 

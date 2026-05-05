@@ -38,7 +38,7 @@ export function AppSitePreviewCard({
         <iframe
           src={href}
           title={t("previewCard.livePreview", { title })}
-          className="pointer-events-none absolute left-0 top-0 h-[920px] w-[1440px] origin-top-left scale-[0.22] border-0 select-none md:h-[980px] md:w-[1536px] md:scale-[0.265]"
+          className="pointer-events-none absolute left-1/2 top-0 h-[920px] w-[1440px] -translate-x-1/2 origin-top scale-[0.24] border-0 select-none md:h-[980px] md:w-[1536px] md:scale-[0.34]"
           loading="lazy"
         />
         <div

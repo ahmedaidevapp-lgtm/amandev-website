@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# Amandev landing
 
-TODO: Document your project here
+Marketing site for Amandev Technologies (Vite + React + TypeScript + Tailwind).

@@ -17,11 +17,10 @@ const Index = () => {
           <div className="container mx-auto px-6 pt-24">
             <div className="max-w-4xl">
               <p className="font-mono text-sm text-primary tracking-widest uppercase mb-6">
-                Freelance data and automation work: from dashboards and pipelines to websites
-                and apps-clear scope, documented handoff, and outcomes you can use day to day.
+                Freelance data & automation—dashboards to apps. Clear scope, documented handoffs.
               </p>
               <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] tracking-tight mb-8">
-                Data, dashboards, and software
+                Data, dashboards, and apps
                 <br />
                 <span className="text-gradient">built for clarity and maintenance</span>
               </h1>
@@ -59,9 +58,9 @@ const Index = () => {
               Services overview
             </h2>
             <p className="text-muted-foreground max-w-3xl mb-12">
-              I work as a solo freelancer with a data-first mindset: fewer moving parts, explicit
-              assumptions, and handoffs your team can run. I can own discovery through delivery or
-              embed alongside your developers for a defined slice.
+              We work with a data-first mindset: fewer moving parts, explicit assumptions, and
+              handoffs your team can run. We can own discovery through delivery or embed alongside
+              your developers for a defined slice.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
               <article className="p-5 rounded-2xl border border-border bg-card">
@@ -102,15 +101,15 @@ const Index = () => {
         </section>
 
         <section className="py-24 md:py-28 border-t border-border">
-          <div className="container mx-auto px-6 space-y-16">
-            <article>
+          <div className="container mx-auto px-6 space-y-10 md:space-y-12">
+            <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-3">Data analysis & dashboards</h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-foreground/80 mb-6 leading-relaxed">
                 Turn scattered spreadsheets and exports into decisions: clean metrics, interactive
                 dashboards, and short narratives leadership can act on.
               </p>
-              <p className="font-medium mb-2">What you get</p>
-              <ul className="text-sm text-muted-foreground space-y-2 mb-5">
+              <p className="font-semibold mb-3 text-foreground">What you get</p>
+              <ul className="text-sm text-foreground/80 space-y-2.5 mb-5 list-disc list-outside pl-5 marker:text-primary/70 leading-relaxed">
                 <li>Clear questions and success metrics agreed up front</li>
                 <li>Cleaned, documented datasets suitable for reuse</li>
                 <li>
@@ -119,22 +118,22 @@ const Index = () => {
                 </li>
                 <li>A one-page summary for stakeholders on how to read it</li>
               </ul>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-foreground/80 leading-relaxed">
                 If you can describe the decision you need to make, we can shape the analysis and
                 dashboard around it.
               </p>
             </article>
 
-            <article>
+            <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-3">
                 Data pipelines & engineering (practical scope)
               </h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-foreground/80 mb-6 leading-relaxed">
                 Reliable, smaller-scale data plumbing: scheduled extracts, transforms, and loads
                 so reporting and apps stay consistent without a full platform team.
               </p>
-              <p className="font-medium mb-2">What you get</p>
-              <ul className="text-sm text-muted-foreground space-y-2 mb-5">
+              <p className="font-semibold mb-3 text-foreground">What you get</p>
+              <ul className="text-sm text-foreground/80 space-y-2.5 mb-5 list-disc list-outside pl-5 marker:text-primary/70 leading-relaxed">
                 <li>
                   Simple, maintainable pipelines (scheduled jobs, cloud functions, lightweight
                   orchestration)
@@ -143,47 +142,47 @@ const Index = () => {
                 <li>Basic monitoring with failure alerts, run logs, and recovery notes</li>
                 <li>Documentation: source-to-target map, refresh frequency, owner checklist</li>
               </ul>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-foreground/80 leading-relaxed">
                 Share your sources and where numbers need to land; you will get a concrete
                 pipeline design and effort range.
               </p>
             </article>
 
-            <article>
+            <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-3">
                 Websites for businesses and professionals
               </h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-foreground/80 mb-6 leading-relaxed">
                 Fast, clear sites that explain what you do, capture leads, and stay easy to
                 update-built with modern stacks and sensible structure.
               </p>
-              <p className="font-medium mb-2">What you get</p>
-              <ul className="text-sm text-muted-foreground space-y-2 mb-5">
+              <p className="font-semibold mb-3 text-foreground">What you get</p>
+              <ul className="text-sm text-foreground/80 space-y-2.5 mb-5 list-disc list-outside pl-5 marker:text-primary/70 leading-relaxed">
                 <li>Structure and copy guidance (or integration with your writer)</li>
                 <li>Responsive layout, accessibility basics, and performance-minded setup</li>
                 <li>Contact forms, analytics hooks, and SEO foundations</li>
                 <li>Deployment to your hosting with handoff docs</li>
               </ul>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-foreground/80 leading-relaxed">
                 Send examples of sites you like and your must-have sections; you will get a fixed
                 page list and timeline.
               </p>
             </article>
 
-            <article>
+            <article className="rounded-2xl border border-border bg-card/25 p-6 md:p-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-3">Data & process automation</h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-foreground/80 mb-6 leading-relaxed">
                 Replace repetitive copy-paste, file shuffling, and report assembly with dependable
                 automation-logged, scheduled, and owned by your team.
               </p>
-              <p className="font-medium mb-2">What you get</p>
-              <ul className="text-sm text-muted-foreground space-y-2 mb-5">
+              <p className="font-semibold mb-3 text-foreground">What you get</p>
+              <ul className="text-sm text-foreground/80 space-y-2.5 mb-5 list-disc list-outside pl-5 marker:text-primary/70 leading-relaxed">
                 <li>Map of current manual steps and failure points</li>
                 <li>Automated flows with clear inputs and outputs</li>
                 <li>Notifications on success/failure and simple runbooks</li>
                 <li>Optional admin view or spreadsheet control panel for non-developers</li>
               </ul>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-foreground/80 leading-relaxed">
                 Walk through one painful weekly task; you will get an automation sketch and effort
                 estimate before any build commitment.
               </p>

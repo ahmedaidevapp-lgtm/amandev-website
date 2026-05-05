@@ -49,7 +49,7 @@ const Navbar = () => {
             App Development
           </Link>
           <a
-            href={location.pathname === "/app-development" ? "#cta" : "#contact"}
+            href={location.pathname === "/app-development" ? "/#contact" : "#contact"}
             className="px-5 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:opacity-90 transition-opacity"
           >
             Book Discovery Call

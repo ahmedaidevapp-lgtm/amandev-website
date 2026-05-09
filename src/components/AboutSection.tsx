@@ -19,17 +19,17 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                With over 8 years in the data space, I've helped startups and enterprises
+                With over 8 years in the data space, we've helped startups and enterprises
                 alike transform their data capabilities — from building first data warehouses
                 to deploying production ML pipelines.
               </p>
               <p>
-                I believe great data work sits at the intersection of engineering rigor,
-                business acumen, and design thinking. Every pipeline I build, every dashboard
-                I design, serves a clear business objective.
+                We believe great data work sits at the intersection of engineering rigor,
+                business acumen, and design thinking. Every pipeline we build, every dashboard
+                we design, serves a clear business objective.
               </p>
               <p>
-                When I'm not wrangling data, you'll find me writing about modern data stack
+                When we're not wrangling data, you'll find us writing about modern data stack
                 trends, mentoring aspiring data professionals, or experimenting with the
                 latest AI tools.
               </p>

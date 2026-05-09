@@ -20,7 +20,7 @@ const ContactSection = () => {
               <span className="text-gradient">data potential?</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-lg mx-auto">
-              Whether you need a full data platform or a quick audit, I'd love
+              Whether you need a full data platform or a quick audit, we'd love
               to hear about your challenges.
             </p>
           </motion.div>
@@ -33,11 +33,11 @@ const ContactSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href="mailto:hello@datapro.dev"
+              href="mailto:ahmed@amandevtech.com"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full hover:opacity-90 transition-opacity"
             >
               <Mail className="w-4 h-4" />
-              hello@datapro.dev
+              ahmed@amandevtech.com
             </a>
             <a
               href="https://linkedin.com"

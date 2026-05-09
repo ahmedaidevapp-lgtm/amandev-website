@@ -50,7 +50,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <p className="font-mono text-sm text-primary tracking-widest uppercase mb-3">What I Do</p>
+          <p className="font-mono text-sm text-primary tracking-widest uppercase mb-3">What We Do</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Services that move the
             <br />

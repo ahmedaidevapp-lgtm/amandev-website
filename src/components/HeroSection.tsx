@@ -35,7 +35,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed"
           >
-            I help businesses build scalable data infrastructure, create
+            We help businesses build scalable data infrastructure, create
             actionable insights, and leverage AI to make smarter decisions.
           </motion.p>
 

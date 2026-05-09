@@ -9,7 +9,7 @@ const steps = [
   {
     number: "02",
     title: "Architecture",
-    description: "I design a tailored solution — selecting the right tools, patterns, and infrastructure.",
+    description: "We design a tailored solution — selecting the right tools, patterns, and infrastructure.",
   },
   {
     number: "03",

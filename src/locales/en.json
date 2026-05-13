@@ -34,7 +34,9 @@
   "cta": {
     "bookMeeting": "Book a meeting",
     "requestEstimate": "Request a written estimate",
-    "estimateSubject": "Written estimate request"
+    "estimateSubject": "Written estimate request",
+    "askQuestions": "Ask questions",
+    "questionsSubject": "Question for Amandev Technologies"
   },
   "servicesOverview": {
     "title": "Services overview",

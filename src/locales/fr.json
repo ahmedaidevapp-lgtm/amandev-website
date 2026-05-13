@@ -34,7 +34,9 @@
   "cta": {
     "bookMeeting": "Réserver un rendez-vous",
     "requestEstimate": "Demander un devis écrit",
-    "estimateSubject": "Demande de devis écrit"
+    "estimateSubject": "Demande de devis écrit",
+    "askQuestions": "Poser des questions",
+    "questionsSubject": "Question pour Amandev Technologies"
   },
   "servicesOverview": {
     "title": "Aperçu des services",

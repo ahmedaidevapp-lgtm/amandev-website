@@ -44,7 +44,7 @@ const Index = () => {
                 {t("cta.bookMeeting")}
               </a>
               <a
-                href={`mailto:ahmed@amandevtech.com?subject=${encodeURIComponent(t("cta.estimateSubject"))}`}
+                href={`mailto:support@amandevtech.com?subject=${encodeURIComponent(t("cta.estimateSubject"))}`}
                 className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50"
               >
                 {t("cta.requestEstimate")}
@@ -183,10 +183,16 @@ const Index = () => {
               {t("cta.bookMeeting")}
             </a>
             <a
-              href={`mailto:ahmed@amandevtech.com?subject=${encodeURIComponent(t("cta.estimateSubject"))}`}
+              href={`mailto:support@amandevtech.com?subject=${encodeURIComponent(t("cta.estimateSubject"))}`}
               className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50"
             >
               {t("cta.requestEstimate")}
+            </a>
+            <a
+              href={`mailto:support@amandevtech.com?subject=${encodeURIComponent(t("cta.questionsSubject"))}`}
+              className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50"
+            >
+              {t("cta.askQuestions")}
             </a>
           </div>
         </div>

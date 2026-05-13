@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Mail, ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
+  const questionsMailto = `mailto:support@amandevtech.com?subject=${encodeURIComponent(t("cta.questionsSubject"))}`;
+
   return (
     <section id="contact" className="py-24 md:py-32 border-t border-border">
       <div className="container mx-auto px-6">
@@ -33,11 +37,17 @@ const ContactSection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href="mailto:ahmed@amandevtech.com"
+              href="mailto:support@amandevtech.com"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-full hover:opacity-90 transition-opacity"
             >
               <Mail className="w-4 h-4" />
-              ahmed@amandevtech.com
+              support@amandevtech.com
+            </a>
+            <a
+              href={questionsMailto}
+              className="inline-flex items-center gap-2 px-8 py-4 border border-border text-foreground font-medium rounded-full hover:border-primary/50 transition-colors"
+            >
+              {t("cta.askQuestions")}
             </a>
             <a
               href="https://linkedin.com"
